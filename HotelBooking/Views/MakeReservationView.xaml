@@ -28,7 +28,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0"
-                       Text="Username" />
+                       Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Grid.Row="1"
                      Margin="0 5 0 0"
                      Text="" />
@@ -53,7 +53,7 @@
             <TextBox Grid.Row="1"
                      Grid.Column="0"
                      Margin="0 5 0 0"
-                     Text="" />
+                     Text="{Binding FloorNumber, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Grid.Row="0"
                        Grid.Column="1"
@@ -62,7 +62,7 @@
             <TextBox Grid.Row="1"
                      Grid.Column="1"
                      Margin="10 5 0 0"
-                     Text="" />
+                     Text="{Binding RoomNumber, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>
 
         <Grid Grid.Row="3"
@@ -84,7 +84,7 @@
             <DatePicker Grid.Row="1"
                         Grid.Column="0"
                         Margin="0 5 0 0"
-                        SelectedDate="" />
+                        SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Grid.Row="0"
                        Grid.Column="1"
@@ -93,14 +93,16 @@
             <DatePicker Grid.Row="1"
                         Grid.Column="1"
                         Margin="10 5 0 0"
-                        SelectedDate="" />
+                        SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>
 
         <StackPanel Grid.Row="4"
                     Margin="0 25 0 0"
                     Orientation="Horizontal">
-            <Button Content="Submit" />
+            <Button Command="{Binding SubmitCommand}"
+                    Content="Submit" />
             <Button Margin="10 0 0 0"
+                    Command="{Binding CancelCommand}"
                     Content="Cancel" />
         </StackPanel>
     </Grid>
