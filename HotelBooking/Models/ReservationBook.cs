@@ -11,6 +11,11 @@ namespace HotelBooking.Models
             _reservations = new List<Reservation>();
         }
 
+        public IEnumerable<Reservation> GetAllReservations()
+        {
+            return _reservations;
+        }
+
         public IEnumerable<Reservation> GetReservationsForUser(string username)
         {
             return _reservations.Where(r => r.Username == username);
